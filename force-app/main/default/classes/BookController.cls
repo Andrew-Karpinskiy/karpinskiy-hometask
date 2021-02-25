@@ -13,5 +13,6 @@ public class BookController {
         bookGenre = book.Genre__c;
         bookAuthor = book.Author__r.Name;
         bookPublisherName = book.Publisher__r.Name; 
+        
     }
 }
