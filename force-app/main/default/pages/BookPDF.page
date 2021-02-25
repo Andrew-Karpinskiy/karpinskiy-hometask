@@ -1,0 +1,21 @@
+<apex:page controller="BookController" renderAs="pdf">
+    <h1>Information About Book</h1>
+    <!-- Book id &id=a0409000002PuUMAA0 -->
+    <table>
+        <tr>
+            <th>Book name</th>  <td> <apex:outputText value="{! bookName }"/> </td>
+        </tr>
+        <tr>
+            <th>Author name</th> <td> <apex:outputText value="{! bookAuthor }"/> </td>
+        </tr>
+        <tr>
+            <th>Date of first edition</th> <td> <apex:outputText value="{! bookFirstPublished }"/> </td>
+        </tr>
+        <tr>
+            <th>Book genre</th> <td> <apex:outputText value="{! bookGenre }"/> </td>
+        </tr>
+        <tr>
+            <th>Publisher</th> <td> <apex:outputText value="{! bookPublisherName }"/> </td>
+        </tr>
+    </table>     
+</apex:page>
