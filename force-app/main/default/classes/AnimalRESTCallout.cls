@@ -8,12 +8,12 @@ public class AnimalRESTCallout {
        	return response;
     }
     
-     public static Map<Integer,AnimalResponse> getAnimals(List<Integer> externalId) {
-        Map<Integer,AnimalResponse> resultMap = new Map<Integer,AnimalResponse>();       
+     public static Map<Integer,Animal__c> getAnimals(List<Integer> externalId) {
+        Map<Integer,Animal__c> resultMap = new Map<Integer,Animal__c>();       
          for (Integer i : externalId) {
              HttpResponse response = getAnimal(i);
-             AnimalResponse animalRes = (AnimalResponse) JSON.deserialize(response.getBody(), AnimalResponse.class);
-             resultMap.put(i,animalRes);
+             Animal__c animal = AnimalResponse.getAnimal(response.getBody());
+             resultMap.put(i,animal);
          }
         return resultMap;
     }
