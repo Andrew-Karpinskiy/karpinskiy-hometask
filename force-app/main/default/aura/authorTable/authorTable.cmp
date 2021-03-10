@@ -1,0 +1,12 @@
+<aura:component controller="AuthorsController">
+
+    <aura:attribute type="Author__c[]" name="authList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+      
+    <aura:handler name="init" value="{!this}" action="{!c.display}"/>
+      
+    <lightning:datatable data="{! v.authList }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+</aura:component>

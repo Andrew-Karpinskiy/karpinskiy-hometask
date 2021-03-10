@@ -1,0 +1,48 @@
+<aura:component controller="AuthorsController">
+    <aura:attribute name="newAuthor" type="Author__c"
+                    default="{ 'sobjectType': 'Author__c',
+                             'Name': '',
+                             'Pen_Name__c': '',
+                             'Phone_Number__c': '',
+                             'Website__c': '',
+                             'Email__c': '' }"/>
+    
+    <aura:handler name="init" action="{!c.clickCreate}" value="{!this}"/>
+    <div aria-labelledby="newauthorsform">
+        <fieldset class="slds-box slds-theme_default slds-container_small">
+        <legend id="newauthorform" class="slds-text-heading_small
+          slds-p-vertical_medium">
+          Add Author
+        </legend>
+        <form class="slds-form_stacked">
+            
+           <lightning:input aura:id="authorform" label="Author Name"
+                             name="authorname"
+                             value="{!v.newAuthor.Name}"
+                             required="true"/>
+            
+           <lightning:input aura:id="authorform" label="Pen Name"
+                             name="penname"
+                             value="{!v.newAuthor.Pen_Name__c}"/>
+            
+            <lightning:input aura:id="authorform" label="Phone Number"
+                             name="phoneNumber"
+                             value="{!v.newAuthor.Phone_Number__c}"/>
+            
+            <lightning:input aura:id="authorform" label="Website"
+                             name="website"
+                             value="{!v.newAuthor.Website__c}"/>
+            
+            <lightning:input aura:id="authorform" label="Email"
+                             name="email"
+                             formatter="email"
+                             value="{!v.newAuthor.Email__c}"/>
+            
+            <lightning:button label="Create Author"
+                              class="slds-m-top_medium"
+                              variant="brand"
+                              onclick="{!c.clickCreate}"/>
+        </form>
+      </fieldset>
+    </div>
+</aura:component>
